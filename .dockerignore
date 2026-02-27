@@ -1,18 +1,8 @@
-node_modules/
-dist/
-coverage/
-databases/
-cli/
-
-*-lock.json
-*.lock
-
-# TODO: Enable when Docker is ENV or ARG is implemented.
-# .env
-# .env.*
-# .env-*
-
-!**.example
-
-.DS_Store
-*.tsbuildinfo
+node_modules
+dist
+.env
+.git
+.github
+scripts
+docker
+*.md

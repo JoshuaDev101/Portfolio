@@ -53,39 +53,28 @@ body {
 .cert-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
 }
 
-/* ── CERT CARD ── */
+/* ── CERT CARD — rounded like techstack tags ── */
 .cert-card {
   display: block;
   text-decoration: none;
-  padding: 1rem 2rem 1rem 0;
-  border-bottom: 1px solid #e4e4ea;
-  transition: background 0.12s;
-}
-
-.cert-card:nth-child(even) {
-  padding-left: 2rem;
-  padding-right: 0;
-  border-left: 1px solid #e4e4ea;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d0d0d8;
+  border-radius: 5px;
+  background: #ffffff;
+  transition: background 0.12s, border-color 0.12s;
 }
 
 .cert-card:hover {
-  background: #fafafa;
-}
-
-/* Remove bottom border on last row */
-.cert-card:nth-last-child(-n+2) {
-  border-bottom: none;
-}
-/* If last item is alone in its row */
-.cert-card:last-child {
-  border-bottom: none;
+  background: #f5f5f7;
+  border-color: #b0b0bc;
 }
 
 /* ── TEXT ── */
 .cert-name {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #111113;
   margin-bottom: 0.15rem;
@@ -93,30 +82,18 @@ body {
 }
 
 .cert-issuer {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: #8a8a92;
   font-weight: 400;
 }
 
 /* Dim wip / planned */
-.cert-card.wip .cert-name  { color: #555; }
-.cert-card.planned .cert-name   { color: #aaa; }
-.cert-card.planned .cert-issuer { color: #c0c0c8; }
+.cert-card.wip .cert-name      { color: #555; }
+.cert-card.planned             { border-color: #e8e8ec; }
+.cert-card.planned .cert-name  { color: #aaa; }
+.cert-card.planned .cert-issuer{ color: #c0c0c8; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 540px) {
   .cert-grid { grid-template-columns: 1fr; }
-
-  .cert-card:nth-child(even) {
-    padding-left: 0;
-    border-left: none;
-  }
-
-  .cert-card:nth-last-child(-n+2) {
-    border-bottom: 1px solid #e4e4ea;
-  }
-
-  .cert-card:last-child {
-    border-bottom: none;
-  }
 }
