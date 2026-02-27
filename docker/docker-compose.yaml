@@ -1,0 +1,7 @@
+name: portfolio-app
+
+services:
+  app:
+    image: joshuadev101/portfolio:latest
+    ports:
+      - '8000:80'
