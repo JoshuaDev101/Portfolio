@@ -1,0 +1,10 @@
+name: portfolio
+
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:80'
