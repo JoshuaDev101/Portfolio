@@ -1,0 +1,122 @@
+/* ─────────────────────────────────────────
+   certifications.css
+───────────────────────────────────────── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #111113;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── HEADER — identical to techstack ── */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.back-btn {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.back-btn:hover { color: #111; }
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111113;
+  letter-spacing: -0.02em;
+}
+
+/* ── CERT GRID ── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── CERT CARD ── */
+.cert-card {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 2rem 1rem 0;
+  border-bottom: 1px solid #e4e4ea;
+  transition: background 0.12s;
+}
+
+.cert-card:nth-child(even) {
+  padding-left: 2rem;
+  padding-right: 0;
+  border-left: 1px solid #e4e4ea;
+}
+
+.cert-card:hover {
+  background: #fafafa;
+}
+
+/* Remove bottom border on last row */
+.cert-card:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+/* If last item is alone in its row */
+.cert-card:last-child {
+  border-bottom: none;
+}
+
+/* ── TEXT ── */
+.cert-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111113;
+  margin-bottom: 0.15rem;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  font-size: 0.78rem;
+  color: #8a8a92;
+  font-weight: 400;
+}
+
+/* Dim wip / planned */
+.cert-card.wip .cert-name  { color: #555; }
+.cert-card.planned .cert-name   { color: #aaa; }
+.cert-card.planned .cert-issuer { color: #c0c0c8; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 540px) {
+  .cert-grid { grid-template-columns: 1fr; }
+
+  .cert-card:nth-child(even) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .cert-card:nth-last-child(-n+2) {
+    border-bottom: 1px solid #e4e4ea;
+  }
+
+  .cert-card:last-child {
+    border-bottom: none;
+  }
+}
