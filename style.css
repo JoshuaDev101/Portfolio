@@ -19,6 +19,25 @@
   --navy-bg: #e8f0fb;
   --radius: 10px;
 }
+@font-face {
+  font-family: 'OpenRunde-Regular';
+  src: url('../src/fonts/OpenRunde-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OpenRunde-Medium';
+  src: url('../src/fonts/OpenRunde-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OpenRunde-Semibold';
+  src: url('../src/fonts/OpenRunde-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OpenRunde-Bold';
+  src: url('../src/fonts/OpenRunde-Bold.otf') format('opentype');
+}
 
 html { scroll-behavior: smooth; }
 
@@ -135,6 +154,7 @@ body {
 .profile-info { flex: 1; }
 
 .profile-name {
+  font-family: 'OpenRunde-Bold';
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
@@ -250,12 +270,13 @@ body {
 
 /* ── VIEW ALL BUTTON ── */
 .view-all-btn {
+  text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-size: 0.76rem;
   font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 1px solid rgba(59,91,219,0.15);
+  color: var(--text);
+  /* background: var(--accent-bg); */
+  /* border: 1px solid rgba(59,91,219,0.15); */
   border-radius: 6px;
   padding: 0.28rem 0.65rem;
   cursor: pointer;
@@ -263,10 +284,10 @@ body {
   white-space: nowrap;
 }
 
-.view-all-btn:hover {
+/* .view-all-btn:hover {
   background: var(--accent);
   color: white;
-}
+} */
 
 /* ── ABOUT ── */
 .about-text {
@@ -406,13 +427,30 @@ body {
 .cert-list { display: flex; flex-direction: column; gap: 0; }
 
 .cert-item {
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 0.1rem ;
+  /* border-bottom: 1px solid var(--border); */
 }
-
+.cert-button{
+  border-radius: 3px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  background: var(--tag-bg);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding: 5px 10px;
+  transition: background 0.2s ease;
+}
+.cert-button:hover{
+  transition: background 0.2s ease;
+  background: #e2e2e6
+}
 .cert-item:last-child { border-bottom: none; }
 
 .cert-name   { font-size: 0.86rem; font-weight: 600; }
@@ -533,12 +571,14 @@ body {
 
 /* ── FOOTER ── */
 footer {
+  font-family:'OpenRunde-Regular' ;
+  margin-bottom: 30px;
   max-width: 1000px;
-  margin: 2rem auto 3rem;
-  padding: 1.5rem;
+  margin: 1rem auto 2rem;
+  padding-top: 1.5rem;
   text-align: center;
-  font-size: 0.76rem;
-  color: var(--text-soft);
+  font-size: 0.90rem;
+  color: var(--text-hard);
   border-top: 1px solid var(--border);
 }
 
